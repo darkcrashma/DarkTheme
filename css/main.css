@@ -693,7 +693,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 /*Оформляем блок статей*/
 .article-block {
-    margin-bottom: 200px;
+    margin-bottom: 180px;
 }
 .article-block__info-box {
     position: relative;
@@ -758,4 +758,94 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 .article-block__nav {
     display: inline-block;
+}
+
+/*Оформляем блок преимуществ*/
+.advantages-item {
+    display: inline-block;
+    position: relative;
+    width: 22%;
+    margin-right: 16%;
+    margin-bottom: 180px;
+}
+.advantages-item:first-child::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../img/advantages/camera.png");
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 33px;
+    height: 25px;
+}
+.advantages-item:nth-child(2)::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../img/advantages/photo.png");
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 33px;
+    height: 25px;
+}
+.advantages-item:last-child::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../img/advantages/money.png");
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 33px;
+    height: 27px;
+}
+.advantages-item:last-child {
+    margin-right: 0;
+}
+.advantages-item__title {
+    padding: 0 0 41px 57px;
+    color: #ffffff;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 1.44px;
+}
+.advantages-item__text {
+    color: #ffffff;
+    font-family: "Raleway", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: 0.84px;
+    margin-bottom: 10px;
+}
+.advantages-item__nav {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.gallery-nav {
+text-align: right;
+}
+.gallery-nav__list {
+    list-style: none;
+}
+.gallery-nav__item {
+    display: inline-block;
+
+}
+.gallery-nav__link {
+    padding: 10px 20px;
+    color: #595959;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+    text-decoration: none;
+}
+.gallery-nav__link:hover {
+    color: #ffffff;
 }
