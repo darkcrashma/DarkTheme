@@ -898,7 +898,7 @@ text-align: right;
     height: 330px;
 }
 .gallery__item:nth-child(3) {
-    width: 41.4%;
+    width: 40.4%;
     height: 330px;
     margin-right: 0;
 }
@@ -907,7 +907,7 @@ text-align: right;
     height: 300px;
 }
 .gallery__item:nth-child(6) {
-    width: 34%;
+    width: 33%;
     height: 300px;
     margin-right: 0;
 }
@@ -1036,5 +1036,144 @@ text-align: right;
 .crew-block__item img {
     max-width: 100%;
     max-height: 100%;
+}
+.user-block {
+    margin-top: 106px;
+    margin-bottom: 100px;
+}
+.contacts-block {
+    display: inline-block;
+    position: relative;
+    width:40%;
+    background-color: #2766bd;
+    box-sizing: border-box;
+    padding: 79px 0 73px 81px;
+    z-index: 0;
+    vertical-align: top;
+}
+.contacts-block::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("../img/contacts/bg.png");
+    -webkit-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.1;
+}
+.contacts-block__title {
+    color: #ffffff;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+}
+.contacts-block__address,
+.contacts-block__mail,
+.contacts-block__phone,
+.contacts-block__phone2 {
+    display: block;
+    color: #ffffff;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.84px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.contacts-block__address:hover,
+.contacts-block__mail:hover,
+.contacts-block__phone:hover,
+.contacts-block__phone2:hover {
+    color: #c34035;
+}
 
+.contacts-block__mail {
+    margin-bottom: 43px;
+}
+.contacts-block__phone2 {
+    margin-bottom: 37px;
+}
+.GetInTouch {
+    display: inline-block;
+    width: 59%;
+    padding: 40px 0 40px 58px;
+    box-sizing: border-box;
+    background: #131313;
+
+}
+.GetInTouch__title {
+    display: block;
+    color: #ffffff;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 1.8px;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+.GetInTouch__name,
+.GetInTouch__mail,
+.GetInTouch__text {
+    display: block;
+    width: 65%;
+    color: #525252;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 0.96px;
+    box-sizing: border-box;
+    padding: 20px 0 5px 15px;
+    margin-bottom: 5px;
+    border: none;
+    background: transparent;
+    resize: none;
+    outline: none;
+}
+.GetInTouch__name,
+.GetInTouch__text {
+    border-bottom: 1px solid #2b2b2b;
+}
+.GetInTouch__mail {
+
+    border-bottom: 1px solid #2260b6;
+}
+.GetInTouch__mail::-webkit-input-placeholder,
+.GetInTouch__mail::-moz-placeholder{
+    color: #2260b6;
+}
+.GetInTouch__btn {
+    display: block;
+    color: #ef4836;
+    font-family: 'Raleway', Arial, sans-serif ;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 13px;
+    letter-spacing: 0.72px;
+    background: transparent;
+    border: 1px solid transparent;
+    margin-top: 15px;
+    outline: none;
+    padding-left: 10px;
+    transition: all 0.4s ease;
+
+}
+.GetInTouch__btn:hover {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.article-link--btn.article-link::after {
+    background: url("../img/content/right-arrow_hover.svg");
+}
+.article-link:hover.article-link--btn.article-link::after {
+    background: url("../img/content/right-arrow.svg")
 }
