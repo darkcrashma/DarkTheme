@@ -509,6 +509,22 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     font-weight: 600;
     font-style: italic;
 }
+html,
+body {
+    height: 100%;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.content {
+    flex: 1 0 auto;
+}
+.footer {
+    flex: 0 0 auto;
+    padding-bottom: 50px;
+}
 /*Сетка*/
 .layout {
     width: 1169px;
@@ -677,6 +693,17 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 46px;
+    position: relative;
+}
+.article-box__title::after {
+    content: '';
+    width: 90px;
+    height: 1px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-150%, 35px);
 }
 .article-box__text {
     display: block;
@@ -731,6 +758,17 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     font-size: 16px;
     font-weight: 300;
     line-height: 30px;
+    position: relative;
+}
+.article-block__text::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-5px, 13px);
 }
 .article-block__nav {
     display: inline-block;
@@ -964,58 +1002,33 @@ text-align: right;
 .article-slider__nav {
     position: absolute;
     text-align: center;
-
     right: 77px;
     bottom: 50px;
-    background-color: #000000;
 }
 
-
-.article-slider__prev {
-    display: inline-block;
-    position: relative;
-    padding: 15px 10px 15px 30px;
-    transition: background 0.4s ease-in-out;
-}
-.article-slider__prev::after {
-    content: '';
+.article-slider__arrow {
     position: absolute;
-    top: 50%;
-    right: 50%;
-    margin-top: -10px;
-    margin-right: -7px;
-    width: 15px;
+    z-index: 100;
+    bottom: 108px;
+    cursor: pointer;
+    right: 109px;
+}
+.article-slider__arrow svg use {
+    fill: #c23526;
+    transition: fill .3s;
+}
+.article-slider__arrow--next {
+    right: 83px;
+}
+.article-slider__arrow--prev {
+    right: 126px;
+}
+.article-slider__arrow svg {
+    width: 25px;
     height: 20px;
-    background: url("../img/slider/prev.svg");
-    -webkit-background-size: cover;
-    background-size: cover;
 }
-.article-slider__prev:hover.article-slider__prev::after{
-    background: url("../img/slider/prev_hover.svg") center no-repeat;
-}
-
-.article-slider__next {
-    display: inline-block;
-    position: relative;
-    padding: 15px 10px 15px 30px;
-
-}
-.article-slider__next::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    margin-top: -10px;
-    margin-right: -7px;
-    width: 15px;
-    height: 20px;
-    background: url("../img/slider/next.svg");
-    -webkit-background-size: cover;
-    background-size: cover;
-    transition: background 0.4s ease-in-out;
-}
-.article-slider__next:hover.article-slider__next::after{
-    background: url("../img/slider/next_hover.svg") center no-repeat;
+.article-slider__arrow:hover svg use{
+    fill: #ffffff;
 }
 .article-slider .draggable {
     padding: 54px 0px;
@@ -1039,8 +1052,10 @@ text-align: right;
 }
 .user-block {
     margin-top: 106px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    background: #131313;
 }
+
 .contacts-block {
     display: inline-block;
     position: relative;
@@ -1070,7 +1085,9 @@ text-align: right;
     font-size: 20px;
     font-weight: 700;
     line-height: 26px;
+
 }
+
 .contacts-block__address,
 .contacts-block__mail,
 .contacts-block__phone,
@@ -1103,7 +1120,6 @@ text-align: right;
     width: 59%;
     padding: 40px 0 40px 58px;
     box-sizing: border-box;
-    background: #131313;
 
 }
 .GetInTouch__title {
@@ -1112,10 +1128,20 @@ text-align: right;
     font-family: 'Raleway', Arial, sans-serif;
     font-size: 30px;
     font-weight: 300;
-    line-height: 20px;
+    line-height: 25px;
     letter-spacing: 1.8px;
     vertical-align: top;
     margin-bottom: 20px;
+    position: relative;
+}
+.GetInTouch__title::after {
+    content: '';
+    width: 90px;
+    height: 1px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: -20%;
 }
 .GetInTouch__name,
 .GetInTouch__mail,
@@ -1176,4 +1202,100 @@ text-align: right;
 }
 .article-link:hover.article-link--btn.article-link::after {
     background: url("../img/content/right-arrow.svg")
+}
+.copyright {
+    width: 49.5%;
+    display: inline-block;
+    text-align: left;
+}
+.copyright__logo {
+    display: inline-block;
+    width: 55px;
+    height: 57px;
+    opacity: 0.1;
+    vertical-align: middle;
+}
+.copyright__logo img {
+    width: 100%;
+    height: 100%;
+}
+.copyright__text {
+    display: inline-block;
+    color: #565656;
+    font-family: "Raleway", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    margin-left: 10px;
+    letter-spacing: 1.12px;
+    vertical-align: middle;
+}
+.social-media {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+.social-media__fb,
+.social-media__tw,
+.social-media__be,
+.social-media__inst,
+.social-media__drag,
+.social-media__pin {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    transition: opacity 0.4s ;
+}
+.social-media__fb {
+     background: url("../img/footer/facebook.svg");
+     -webkit-background-size: cover;
+     background-size: cover;
+ }
+.social-media__tw {
+    background: url("../img/footer/twitter.svg");
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.social-media__be {
+    background: url("../img/footer/behance-logo.svg");
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.social-media__inst {
+    background: url("../img/footer/instagram-logo.svg");
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.social-media__drag {
+    background: url("../img/footer/dribble-logo.svg");
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.social-media__pin {
+    background: url("../img/footer/pinterest-logo.svg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin-right: 0;
+}
+.social-media__fb:hover,
+.social-media__tw:hover,
+.social-media__be:hover,
+.social-media__inst:hover,
+.social-media__drag:hover,
+.social-media__pin:hover {
+    opacity: 0.5;
+}
+
+@media (max-width: 1279.9px) {
+    .layout {
+        width: 700px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 767.9px) {
+    .layout {
+        width: 400px;
+        margin: 0 auto;
+    }
 }
