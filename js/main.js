@@ -9,4 +9,12 @@ $(document).ready( function() {
         prevArrow: '<div class="article-slider__arrow article-slider__arrow--prev"><svg><use xlink:href="img/sprites.svg#prev"></use></svg></div>'
     });
 
+
+    $('.gamburger').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass("gamburger--active");
+        $('.headerMenu').toggleClass('headerMenu--active');
+        $('body, html').toggleClass('overflowHidden');
+    });
+
 });
