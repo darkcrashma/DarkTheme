@@ -619,9 +619,13 @@ body {
 }
 
 .logo {
+    position: absolute;
+    z-index: 1000;
     vertical-align: middle;
-    width: 10%;
+    width: 32%;
     display: inline-block;
+    top: 0;
+    left: 0;
 }
 .logo-box {
     display: block;
@@ -636,10 +640,11 @@ body {
     transform: rotate(-90deg);
 }
 .nav-menu {
-    text-align: right;
+    position: relative;
     vertical-align: middle;
-    width: 89%;
-    display: inline-block;
+    text-align: right;
+    width: 100%;
+    display: block;
 }
 .nav-menu__list {
     display: inline-block;
@@ -678,6 +683,9 @@ body {
     margin-right: 85px;
     background-color: #ffffff;
     overflow: hidden;
+}
+.video-box iframe {
+    width: 100%;
 }
 .article-box {
     vertical-align: top;
@@ -1295,8 +1303,11 @@ text-align: right;
     .layout--header {
         padding-top: 33px;
     }
+    .logo {
+        width: 13%;
+    }
     .nav-menu {
-        width: 89%;
+        width: 100%;
         text-align: center;
     }
     .nav-menu__item {
@@ -1430,24 +1441,38 @@ text-align: right;
         width: 400px;
         margin: 0 auto;
     }
-    .logo--active  {
-        position: fixed;
-        z-index: 1000;
-        top: 10px;
-        left: 40px;
+    .logo.logo--active  {
+        top: 20px;
+        left: 68px;
     }
-
+    .logo>.logo-box {
+        transform: rotate(0);
+    }
+    .logo.logo--active>.logo-box {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
     .nav-menu {
-        position: fixed;
+        text-align: left;
+    }
+    .nav-menu.nav-menu--active {
+        position: absolute;
+        text-align: center;
         width: 100vw;
         height: 100vh;
         z-index: 999;
         background-color: #630600;
         top: 0;
         left: 0;
-        visibility: hidden;
     }
     .nav-menu__list {
+        display: none;
+    }
+    .nav-menu--active>.nav-menu__list {
+        display: block;
         width: 100%;
         margin-top: 18%;
     }
@@ -1600,3 +1625,4 @@ text-align: right;
         margin: 0 auto;
     }
 }
+

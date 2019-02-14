@@ -9,14 +9,13 @@ $(document).ready( function() {
         prevArrow: '<div class="article-slider__arrow article-slider__arrow--prev"><svg><use xlink:href="img/sprites.svg#prev"></use></svg></div>'
     });
 
-    if ($(window).width()<= '768') {
-        $('.logo').on('click', function (e) {
-            e.preventDefault();
-            $(this).toggleClass("logo--active", ".logo-box:focus");
-            $('.nav-menu').toggleClass('nav-menu--active');
-            $('body, html').toggleClass('overflowHidden');
-        });
+
+    $('.logo').on('click', function (e) {
+        e.preventDefault();
+        if ($(window).width() <= '768') {
+        $(this).toggleClass("logo--active");
+        $('.nav-menu').toggleClass('nav-menu--active');
+        $('body, html').toggleClass('overflowHidden');
     }
-    else {
-    }
+    });
 });
