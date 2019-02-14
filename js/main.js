@@ -9,12 +9,14 @@ $(document).ready( function() {
         prevArrow: '<div class="article-slider__arrow article-slider__arrow--prev"><svg><use xlink:href="img/sprites.svg#prev"></use></svg></div>'
     });
 
-
-    $('.gamburger').on('click', function (e) {
-        e.preventDefault();
-        $(this).toggleClass("gamburger--active");
-        $('.headerMenu').toggleClass('headerMenu--active');
-        $('body, html').toggleClass('overflowHidden');
-    });
-
+    if ($(window).width()<= '768') {
+        $('.logo').on('click', function (e) {
+            e.preventDefault();
+            $(this).toggleClass("logo--active", ".logo-box:focus");
+            $('.nav-menu').toggleClass('nav-menu--active');
+            $('body, html').toggleClass('overflowHidden');
+        });
+    }
+    else {
+    }
 });
