@@ -612,6 +612,7 @@ body {
 }
 .article-link:hover {
     color: #ef4836;
+    border-color: #ef4836;
 }
 .article-link:hover.article-link::after {
     transform: translateX(-100%);
@@ -641,7 +642,6 @@ body {
 }
 .nav-menu {
     position: relative;
-    vertical-align: middle;
     text-align: right;
     width: 100%;
     display: block;
@@ -809,6 +809,7 @@ body {
 /*Оформляем блок преимуществ*/
 .advantages-item {
     display: inline-block;
+    vertical-align: top;
     position: relative;
     width: 22%;
     margin-right: 16%;
@@ -884,7 +885,6 @@ text-align: right;
 }
 .gallery-nav__item {
     display: inline-block;
-
 }
 .gallery-nav__link {
     padding: 10px 20px;
@@ -913,7 +913,7 @@ text-align: right;
     clear: both;
 }
 .gallery__item {
-    display: inline-block;
+    display: block;
     position: relative;
     float: left;
     margin-right: 5px;
@@ -930,6 +930,13 @@ text-align: right;
     background-color: #000000;
     opacity: 0;
     transition: 0.4s ease-in-out;
+}
+.gallery-nav__item--active {
+    background-color: #EF4836;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
 }
 .gallery__item:hover.gallery__item::after {
    opacity: 0.3;
@@ -1126,7 +1133,7 @@ text-align: right;
 .GetInTouch {
     display: inline-block;
     width: 59%;
-    padding: 40px 0 40px 58px;
+    padding: 40px 0 30px 58px;
     box-sizing: border-box;
 
 }
@@ -1136,9 +1143,8 @@ text-align: right;
     font-family: 'Raleway', Arial, sans-serif;
     font-size: 30px;
     font-weight: 300;
-    line-height: 25px;
+    line-height: 1.5em;
     letter-spacing: 1.8px;
-    vertical-align: top;
     margin-bottom: 20px;
     position: relative;
 }
@@ -1222,6 +1228,10 @@ text-align: right;
     height: 57px;
     opacity: 0.1;
     vertical-align: middle;
+    transition: opacity .4s ease-in-out ;
+}
+.copyright__logo:hover {
+    opacity: 0.9;
 }
 .copyright__logo img {
     width: 100%;
@@ -1294,6 +1304,9 @@ text-align: right;
 .social-media__pin:hover {
     opacity: 0.5;
 }
+.social-media__visually-hidden {
+    visibility: hidden;
+}
 
 @media (max-width: 1279.9px) {
     .layout {
@@ -1352,7 +1365,7 @@ text-align: right;
         font-size: 14px;
     }
     .gallery__item:nth-child(1) {
-        width: 50%;
+        width: 49.5%;
         height: auto;
     }
     .gallery__item:nth-child(2) {
@@ -1379,6 +1392,7 @@ text-align: right;
         width: 49%;
         height: auto;
     }
+
     .gallery-block {
         margin-bottom: 50px;
     }
@@ -1435,6 +1449,7 @@ text-align: right;
 
         height: 30px;
     }
+
 }
 @media (max-width: 767.9px) {
     .layout {
@@ -1549,6 +1564,7 @@ text-align: right;
         margin: 0 auto;
         margin-left: 50%;
         transform: translateX(-50%);
+        margin-top: 20px;
     }
     .gallery-block {
         margin-bottom: 25px;}
